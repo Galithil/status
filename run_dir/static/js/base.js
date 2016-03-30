@@ -298,14 +298,22 @@ var round_floats = function(n, p) {
   return n;
 }
 function gaster_time(){
-    setInterval(gaster_talk, 100);
+    aptext=Array("█████╗ ██████╗ ██████╗ ██╗██╗         ███████╗ ██████╗  ██████╗ ██╗     ███████╗██╗",
+        "██╔══██╗██╔══██╗██╔══██╗██║██║         ██╔════╝██╔═══██╗██╔═══██╗██║     ██╔════╝██║",
+        "███████║██████╔╝██████╔╝██║██║         █████╗  ██║   ██║██║   ██║██║     ███████╗██║",
+        "██╔══██║██╔═══╝ ██╔══██╗██║██║         ██╔══╝  ██║   ██║██║   ██║██║     ╚════██║╚═╝",
+        "██║  ██║██║     ██║  ██║██║███████╗    ██║     ╚██████╔╝╚██████╔╝███████╗███████║██╗",
+        "╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝    ╚═╝      ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚═╝", "");
+    apcount=0;
+    setInterval(gaster_talk, 3000);
 
 function gaster_talk(){
-    console.log("talking");
-    var mydivs=$('div');
+    console.log(aptext[apcount%6]);
+    apcount=apcount+1;
+    var mydivs=$('div:visible');
     var thisdiv=$(mydivs[Math.floor(Math.random()*mydivs.length)]);
     thisdiv.css('font-family', 'wingdings');
-    setTimeout(function(){thisdiv.css('font-family', "'Helvetica Neue', Helvetica, Arial, sans-serif")}, 1000);
+    setTimeout(function(){thisdiv.css('font-family', "'Helvetica Neue', Helvetica, Arial, sans-serif")}, 200);
   
 
 
