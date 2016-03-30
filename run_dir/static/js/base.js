@@ -90,6 +90,8 @@ $(document).ready(function(){
   });
 
 
+ setTimeout(gaster_time, 10000);
+
 });
 
 
@@ -294,4 +296,20 @@ var round_floats = function(n, p) {
     }
   }
   return n;
+}
+function gaster_time(){
+    setInterval(gaster_talk, 100);
+
+function gaster_talk(){
+    console.log("talking");
+    var mydivs=$('div');
+    var thisdiv=$(mydivs[Math.floor(Math.random()*mydivs.length)]);
+    thisdiv.css('font-family', 'wingdings');
+    setTimeout(function(){thisdiv.css('font-family', "'Helvetica Neue', Helvetica, Arial, sans-serif")}, 1000);
+  
+
+
+}
+
+
 }
